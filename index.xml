@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CIS 706/801: Translator Design I &amp; II, Fall 2024 on CIS 771: Software Specifications Website</title>
-    <link>https://f24.compilers.santoslab.org/</link>
+    <link>https://f24.softwarespecs.santoslab.org/</link>
     <description>Recent content in CIS 706/801: Translator Design I &amp; II, Fall 2024 on CIS 771: Software Specifications Website</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://f24.compilers.santoslab.org/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://f24.softwarespecs.santoslab.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Advice</title>
-      <link>https://f24.compilers.santoslab.org/advice/</link>
+      <link>https://f24.softwarespecs.santoslab.org/advice/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://f24.compilers.santoslab.org/advice/</guid>
+      <guid>https://f24.softwarespecs.santoslab.org/advice/</guid>
       <description>How To Survive in This Course We cover a lot of materials in this course, and it is easy to get lost quickly if you do not keep up daily. We try to do several things to help you keep up. We provide the lecture slides and links to some additional resources.&#xA;Besides all these, there are a number of things that you should do to make sure that you are getting the most out of the course.</description>
     </item>
     <item>
       <title>Notes</title>
-      <link>https://f24.compilers.santoslab.org/notes/</link>
+      <link>https://f24.softwarespecs.santoslab.org/notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://f24.compilers.santoslab.org/notes/</guid>
+      <guid>https://f24.softwarespecs.santoslab.org/notes/</guid>
       <description>CIS Account If you do not have a CIS account, here is how to get one:&#xA;Get a K-State eID if you don’t already have one. Sign up online for a CIS account (which requires an active eID first!). The account manager will approve your account and you will receive a password by email to by your eID account. GitHub Account Coursework submissions will be done via GitHub. In the beginning of the course, each student will be given a private GitHub repository; thus, you need to have a GitHub account.</description>
     </item>
     <item>
       <title>Projects</title>
-      <link>https://f24.compilers.santoslab.org/projects/</link>
+      <link>https://f24.softwarespecs.santoslab.org/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://f24.compilers.santoslab.org/projects/</guid>
+      <guid>https://f24.softwarespecs.santoslab.org/projects/</guid>
       <description>Example Project – Static Java Compiler (sjc) Static Java Compiler (sjc) is a compiler for a strict “static” (procedural) subset of Java (a compiler for structured programs in Java without objects). This project is used to illustrate various concepts in designing and implementing a translator.&#xA;Features/Limitations of Static Java&#xA;Only two variable types: boolean and int No objects (thus, no exception handling), arrays, or threads Only static fields and methods Method return type can be the above type and void No method overloading Can call Java library static methods (e.</description>
     </item>
     <item>
       <title>Schedule</title>
-      <link>https://f24.compilers.santoslab.org/schedule/</link>
+      <link>https://f24.softwarespecs.santoslab.org/schedule/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://f24.compilers.santoslab.org/schedule/</guid>
+      <guid>https://f24.softwarespecs.santoslab.org/schedule/</guid>
       <description>Week. Meeting: Date Lectures/Lab T: Aug 20 Sets and Relations Course Overview Install: Alloy 5.1.0 U: Aug 29 Alloy Tour (a, b, c) Quiz 1: Sets and Relations U: Sep 5 Alloy Tour (d, e) Project 1: Alloy (due Sep 22) Quiz 2: Alloy Tour (a, b, c) U: Sep 12 Alloy Logic (b, c) Quiz 3: Alloy (d, e) U: Sep 19 Alloy Logic (d, e) Project 2: Alloy (due Oct 7) Quiz 4: Alloy Logic (b, c) U: Sep 26 Quiz 4: Alloy Logic (d, e) U: Oct 3 Exam 1: Alloy Install Sireum IVE T U: Oct 8 &amp;amp; 10 Introduction to SysMLv2 and HAMR T U: Oct 15 &amp;amp; 17 GUMBO Contract Quiz 5: SysMLv2 and HAMR T U: Oct 22 &amp;amp; 24 HAMR Code Generation Project 2: SysMLv2, HAMR, and GUMBO (due Nov 8) Quiz 6: GUMBO Contract T U: Oct 29 &amp;amp; 31 HAMR Testing Framework Exam 2: SysMLv2, HAMR, and GUMBO T U: Nov 5 &amp;amp; 7 Introduction to Logika T U: Nov 12 &amp;amp; 14 Methods and Loops Project 3: Logika (due Dec 8) Quiz 7: Methods and Loops T U: Nov 19 &amp;amp; 21 Sequences and Termination Thanksgiving Break T U: Dec 3 &amp;amp; 5 Case Studies Quiz 8: Sequences and Termination F.</description>
     </item>
     <item>
       <title>Syllabus</title>
-      <link>https://f24.compilers.santoslab.org/syllabus/</link>
+      <link>https://f24.softwarespecs.santoslab.org/syllabus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://f24.compilers.santoslab.org/syllabus/</guid>
+      <guid>https://f24.softwarespecs.santoslab.org/syllabus/</guid>
       <description>Learning Outcomes The student should become familiar with technologies for software specification and verification that provide deep semantic reasoning about development artifacts such as functional models, architecture, and source-code implementations.&#xA;Topics After a brief introduction, we shall cover:&#xA;Alloy which brings specifications to life by allowing designers to query constructed models via its constraint analyzer and to easily assess the impact of model refinements. SysMLv2 which is the upcoming modeling language in practice, with the HAMR framework providing some useful code generation/testing capabilities and for reasoning about GUMBO contract specifications.</description>
     </item>
   </channel>
