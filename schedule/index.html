@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Week. Meeting: Date Lectures/Lab T: Aug 20 Sets and Relations Course Overview Install: Alloy 5.1.0 U: Aug 29 Alloy Tour (a, b, c) Quiz 1: Sets and Relations U: Sep 5 Alloy Tour (d, e) Project 1: Alloy (due Sep 22) Quiz 2: Alloy Tour (a, b, c) U: Sep 12 Alloy Logic (b, c) Quiz 3: Alloy (d, e) U: Sep 19 Alloy Logic (d, e) Project 2: Alloy (due Oct 7) Quiz 4: Alloy Logic (b, c) U: Sep 26 Quiz 4: Alloy Logic (d, e) U: Oct 3 Exam 1: Alloy Install Sireum IVE T U: Oct 8 &amp;amp; 10 Introduction to SysMLv2 and HAMR T U: Oct 15 &amp;amp; 17 GUMBO Contract Quiz 5: SysMLv2 and HAMR T U: Oct 22 &amp;amp; 24 HAMR Code Generation Project 2: SysMLv2, HAMR, and GUMBO (due Nov 8) Quiz 6: GUMBO Contract T U: Oct 29 &amp;amp; 31 HAMR Testing Framework Exam 2: SysMLv2, HAMR, and GUMBO T U: Nov 5 &amp;amp; 7 Introduction to Logika T U: Nov 12 &amp;amp; 14 Methods and Loops Project 3: Logika (due Dec 8) Quiz 7: Methods and Loops T U: Nov 19 &amp;amp; 21 Sequences and Termination Thanksgiving Break T U: Dec 3 &amp;amp; 5 Case Studies Quiz 8: Sequences and Termination F." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://f24.compilers.santoslab.org/schedule/" />
+
+
+    <title>
+        
+            Schedule :: CIS 771: Software Specifications Website 
+        
+    </title>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.14/themes/default/style.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.14/themes/default-dark/style.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+<link rel="stylesheet" href="https://f24.compilers.santoslab.org/main.bb5800eee8f586a18b3279c31871b8200e8241f03fc81c3b9f32c53095be4e99.css" integrity="sha256-u1gA7uj1hqGLMnnDGHG4IA6CQfA/yBw7nzLFMJW&#43;Tpk=">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://f24.compilers.santoslab.org/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://f24.compilers.santoslab.org/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://f24.compilers.santoslab.org/favicon-16x16.png">
+    <link rel="manifest" href="https://f24.compilers.santoslab.org/site.webmanifest">
+    <link rel="mask-icon" href="https://f24.compilers.santoslab.org/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://f24.compilers.santoslab.org/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Schedule">
+  <meta itemprop="description" content="Week. Meeting: Date Lectures/Lab T: Aug 20 Sets and Relations Course Overview Install: Alloy 5.1.0 U: Aug 29 Alloy Tour (a, b, c) Quiz 1: Sets and Relations U: Sep 5 Alloy Tour (d, e) Project 1: Alloy (due Sep 22) Quiz 2: Alloy Tour (a, b, c) U: Sep 12 Alloy Logic (b, c) Quiz 3: Alloy (d, e) U: Sep 19 Alloy Logic (d, e) Project 2: Alloy (due Oct 7) Quiz 4: Alloy Logic (b, c) U: Sep 26 Quiz 4: Alloy Logic (d, e) U: Oct 3 Exam 1: Alloy Install Sireum IVE T U: Oct 8 &amp; 10 Introduction to SysMLv2 and HAMR T U: Oct 15 &amp; 17 GUMBO Contract Quiz 5: SysMLv2 and HAMR T U: Oct 22 &amp; 24 HAMR Code Generation Project 2: SysMLv2, HAMR, and GUMBO (due Nov 8) Quiz 6: GUMBO Contract T U: Oct 29 &amp; 31 HAMR Testing Framework Exam 2: SysMLv2, HAMR, and GUMBO T U: Nov 5 &amp; 7 Introduction to Logika T U: Nov 12 &amp; 14 Methods and Loops Project 3: Logika (due Dec 8) Quiz 7: Methods and Loops T U: Nov 19 &amp; 21 Sequences and Termination Thanksgiving Break T U: Dec 3 &amp; 5 Case Studies Quiz 8: Sequences and Termination F.">
+  <meta itemprop="wordCount" content="217">
+  <meta itemprop="image" content="https://f24.compilers.santoslab.org/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://f24.compilers.santoslab.org/">
+  <meta name="twitter:title" content="Schedule">
+  <meta name="twitter:description" content="Week. Meeting: Date Lectures/Lab T: Aug 20 Sets and Relations Course Overview Install: Alloy 5.1.0 U: Aug 29 Alloy Tour (a, b, c) Quiz 1: Sets and Relations U: Sep 5 Alloy Tour (d, e) Project 1: Alloy (due Sep 22) Quiz 2: Alloy Tour (a, b, c) U: Sep 12 Alloy Logic (b, c) Quiz 3: Alloy (d, e) U: Sep 19 Alloy Logic (d, e) Project 2: Alloy (due Oct 7) Quiz 4: Alloy Logic (b, c) U: Sep 26 Quiz 4: Alloy Logic (d, e) U: Oct 3 Exam 1: Alloy Install Sireum IVE T U: Oct 8 &amp; 10 Introduction to SysMLv2 and HAMR T U: Oct 15 &amp; 17 GUMBO Contract Quiz 5: SysMLv2 and HAMR T U: Oct 22 &amp; 24 HAMR Code Generation Project 2: SysMLv2, HAMR, and GUMBO (due Nov 8) Quiz 6: GUMBO Contract T U: Oct 29 &amp; 31 HAMR Testing Framework Exam 2: SysMLv2, HAMR, and GUMBO T U: Nov 5 &amp; 7 Introduction to Logika T U: Nov 12 &amp; 14 Methods and Loops Project 3: Logika (due Dec 8) Quiz 7: Methods and Loops T U: Nov 19 &amp; 21 Sequences and Termination Thanksgiving Break T U: Dec 3 &amp; 5 Case Studies Quiz 8: Sequences and Termination F.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="menu-trigger">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+    </span>
+    <span class="header__inner">
+        <a href="https://f24.compilers.santoslab.org/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">Home</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                
+
+<nav class="menu">
+  <ul class="menu__inner">
+  
+  
+    
+      <div>
+        <li>
+          <a href="https://f24.compilers.santoslab.org/syllabus/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">
+            <span class="responsive-title-long">Syllabus</span>
+            <span class="responsive-title-short">Syllabus</span>
+          </a>
+        </li>
+      </div>
+    
+  
+
+  
+  
+    
+      <div>
+        <li>
+          <a href="https://f24.compilers.santoslab.org/schedule/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">
+            <span class="responsive-title-long">Schedule</span>
+            <span class="responsive-title-short">Schedule</span>
+          </a>
+        </li>
+      </div>
+    
+  
+
+  
+  
+    
+      <div>
+        <li>
+          <a href="https://f24.compilers.santoslab.org/projects/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">
+            <span class="responsive-title-long">Projects</span>
+            <span class="responsive-title-short">Projects</span>
+          </a>
+        </li>
+      </div>
+    
+  
+
+  
+  
+    
+      <div>
+        <li>
+          <a href="https://f24.compilers.santoslab.org/notes/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">
+            <span class="responsive-title-long">Notes</span>
+            <span class="responsive-title-short">Notes</span>
+          </a>
+        </li>
+      </div>
+    
+  
+
+  </ul>
+</nav>
+
+            
+        </span>
+    </span>
+        <span class="theme-toggle not-selectable"><img src="https://f24.compilers.santoslab.org/img/toggle.png" height="20px"></span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://f24.compilers.santoslab.org/schedule/">Schedule</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <hr>
+
+
+
+
+<table>
+    
+    
+    
+    
+    <tr>
+         <th>Week. Meeting: Date</th>  <th>Lectures/Lab</th> 
+    </tr>
+    
+    
+    <tr>
+        
+        
+        <td><p><ol>
+<li>T: Aug 20</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Sets and Relations</li>
+<li>Course Overview</li>
+<li>Install: <a href="https://github.com/AlloyTools/org.alloytools.alloy/releases/tag/v5.1.0">Alloy 5.1.0</a></li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="2">
+<li>U: Aug 29</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Alloy Tour (a, b, c)</li>
+<li>Quiz 1: Sets and Relations</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="3">
+<li>U: Sep 5</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Alloy Tour (d, e)</li>
+<li>Project 1: Alloy (due <strong>Sep 22</strong>)</li>
+<li>Quiz 2: Alloy Tour (a, b, c)</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="4">
+<li>U: Sep 12</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Alloy Logic (b, c)</li>
+<li>Quiz 3: Alloy (d, e)</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="5">
+<li>U: Sep 19</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Alloy Logic (d, e)</li>
+<li>Project 2: Alloy (due <strong>Oct 7</strong>)</li>
+<li>Quiz 4: Alloy Logic (b, c)</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="6">
+<li>U: Sep 26</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Quiz 4: Alloy Logic (d, e)</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="7">
+<li>U: Oct 3</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Exam 1: Alloy</li>
+<li>Install Sireum IVE</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="8">
+<li>T U: Oct 8 &amp; 10</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Introduction to SysMLv2 and HAMR</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="9">
+<li>T U: Oct 15 &amp; 17</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>GUMBO Contract</li>
+<li>Quiz 5: SysMLv2 and HAMR</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="10">
+<li>T U: Oct 22 &amp; 24</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>HAMR Code Generation</li>
+<li>Project 2: SysMLv2, HAMR, and GUMBO (due <strong>Nov 8</strong>)</li>
+<li>Quiz 6: GUMBO Contract</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="11">
+<li>T U: Oct 29 &amp; 31</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>HAMR Testing Framework</li>
+<li>Exam 2: SysMLv2, HAMR, and GUMBO</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="12">
+<li>T U: Nov 5 &amp; 7</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Introduction to Logika</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="13">
+<li>T U: Nov 12 &amp; 14</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Methods and Loops</li>
+<li>Project 3: Logika (due <strong>Dec 8</strong>)</li>
+<li>Quiz 7: Methods and Loops</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="14">
+<li>T U: Nov 19 &amp; 21</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Sequences and Termination</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="15">
+<li>Thanksgiving Break</li>
+</ol>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><ol start="16">
+<li>T U: Dec 3 &amp; 5</li>
+</ol>
+</p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Case Studies</li>
+<li>Quiz 8: Sequences and Termination</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><strong>F. Dec 9: 2-3:50pm</strong></p></td>
+        
+        
+        
+        <td><p><ul>
+<li>Final Exam</li>
+</ul>
+</p></td>
+        
+        
+    </tr>
+    
+</table>
+
+            </div>
+        </article>
+
+        <hr />
+
+        
+
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="https://f24.compilers.santoslab.org/bundle.min.d9847dec188cb3ba71e262769d7f64069d223c3a9713999a5da5f7aca5638686e15a900ac07cc755d19861961f24145ef2d608296933e4150cae87f4911a7dbb.js" integrity="sha512-2YR97BiMs7px4mJ2nX9kBp0iPDqXE5maXaX3rKVjhobhWpAKwHzHVdGYYZYfJBRe8tYIKWkz5BUMrof0kRp9uw=="></script>
+
+
+<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/thecarnie-cycle2/2.1.6c/jquery.cycle2.min.js" integrity="sha512-ydWfQuPu+srw5hhkU8O1XGn3/Kc+GyoDBvYc8E+SyuZKphQP18ZWYKywIFzPWZwQk6dlmTY69aDg/SnFz3qPeQ==" crossorigin="anonymous"></script>
+<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous"></script>
+<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.14/jstree.min.js" integrity="sha512-OQ2by9SrJBwcXaeYmkG2t6FVZiwpyRtFar2VvULjuq5OjVpJLwsUHuNzN9PClqEJAYsWsRPSb4TTfriZzPGiow==" crossorigin="anonymous"></script>
+<script style="text/javascript">
+  window.addEventListener('load', function () {
+    $('#page-tree').jstree({
+      "core": {
+        "themes": {
+          "name": document.documentElement.getAttribute("data-theme") == "dark" ? "default-dark" : "default",
+          "dots": true,
+          "icons": false,
+          "variant": "large"
+        }
+      },
+      plugins: [ "ui" ],
+    }).bind("select_node.jstree", function (e, data) {
+      document.location.href = data.node.a_attr.href;
+    }).bind("ready.jstree", function (event, data) {
+      $(this).jstree("open_all");
+    }).bind("open_all.jstree", function (event, data) {
+      level = 0;
+      data.instance.element.find('li').each(function() {
+        if (level > 0 && data.instance.get_path(this).length >= level){
+          data.instance.close_node(this);
+        }
+      });
+      data.instance.element.get()[0].style.display="block";
+    });
+  });
+</script>
+
+
+    </body>
+</html>

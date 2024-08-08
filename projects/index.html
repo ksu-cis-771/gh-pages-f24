@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Example Project – Static Java Compiler (sjc) Static Java Compiler (sjc) is a compiler for a strict “static” (procedural) subset of Java (a compiler for structured programs in Java without objects). This project is used to illustrate various concepts in designing and implementing a translator.
+Features/Limitations of Static Java
+Only two variable types: boolean and int No objects (thus, no exception handling), arrays, or threads Only static fields and methods Method return type can be the above type and void No method overloading Can call Java library static methods (e." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://f24.compilers.santoslab.org/projects/" />
+
+
+    <title>
+        
+            Projects :: CIS 771: Software Specifications Website 
+        
+    </title>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.14/themes/default/style.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.14/themes/default-dark/style.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+<link rel="stylesheet" href="https://f24.compilers.santoslab.org/main.bb5800eee8f586a18b3279c31871b8200e8241f03fc81c3b9f32c53095be4e99.css" integrity="sha256-u1gA7uj1hqGLMnnDGHG4IA6CQfA/yBw7nzLFMJW&#43;Tpk=">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://f24.compilers.santoslab.org/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://f24.compilers.santoslab.org/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://f24.compilers.santoslab.org/favicon-16x16.png">
+    <link rel="manifest" href="https://f24.compilers.santoslab.org/site.webmanifest">
+    <link rel="mask-icon" href="https://f24.compilers.santoslab.org/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://f24.compilers.santoslab.org/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Projects">
+  <meta itemprop="description" content="Example Project – Static Java Compiler (sjc) Static Java Compiler (sjc) is a compiler for a strict “static” (procedural) subset of Java (a compiler for structured programs in Java without objects). This project is used to illustrate various concepts in designing and implementing a translator.
+Features/Limitations of Static Java
+Only two variable types: boolean and int No objects (thus, no exception handling), arrays, or threads Only static fields and methods Method return type can be the above type and void No method overloading Can call Java library static methods (e.">
+  <meta itemprop="wordCount" content="1135">
+  <meta itemprop="image" content="https://f24.compilers.santoslab.org/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://f24.compilers.santoslab.org/">
+  <meta name="twitter:title" content="Projects">
+  <meta name="twitter:description" content="Example Project – Static Java Compiler (sjc) Static Java Compiler (sjc) is a compiler for a strict “static” (procedural) subset of Java (a compiler for structured programs in Java without objects). This project is used to illustrate various concepts in designing and implementing a translator.
+Features/Limitations of Static Java
+Only two variable types: boolean and int No objects (thus, no exception handling), arrays, or threads Only static fields and methods Method return type can be the above type and void No method overloading Can call Java library static methods (e.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="menu-trigger">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+    </span>
+    <span class="header__inner">
+        <a href="https://f24.compilers.santoslab.org/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">Home</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                
+
+<nav class="menu">
+  <ul class="menu__inner">
+  
+  
+    
+      <div>
+        <li>
+          <a href="https://f24.compilers.santoslab.org/syllabus/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">
+            <span class="responsive-title-long">Syllabus</span>
+            <span class="responsive-title-short">Syllabus</span>
+          </a>
+        </li>
+      </div>
+    
+  
+
+  
+  
+    
+      <div>
+        <li>
+          <a href="https://f24.compilers.santoslab.org/schedule/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">
+            <span class="responsive-title-long">Schedule</span>
+            <span class="responsive-title-short">Schedule</span>
+          </a>
+        </li>
+      </div>
+    
+  
+
+  
+  
+    
+      <div>
+        <li>
+          <a href="https://f24.compilers.santoslab.org/projects/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">
+            <span class="responsive-title-long">Projects</span>
+            <span class="responsive-title-short">Projects</span>
+          </a>
+        </li>
+      </div>
+    
+  
+
+  
+  
+    
+      <div>
+        <li>
+          <a href="https://f24.compilers.santoslab.org/notes/" onmouseover="menuUnderline(this, true);" onmouseout="menuUnderline(this, false);">
+            <span class="responsive-title-long">Notes</span>
+            <span class="responsive-title-short">Notes</span>
+          </a>
+        </li>
+      </div>
+    
+  
+
+  </ul>
+</nav>
+
+            
+        </span>
+    </span>
+        <span class="theme-toggle not-selectable"><img src="https://f24.compilers.santoslab.org/img/toggle.png" height="20px"></span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://f24.compilers.santoslab.org/projects/">Projects</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <hr>
+<h4 id="example-project--static-java-compiler-sjc">Example Project – Static Java Compiler (sjc)</h4>
+<p>Static Java Compiler (sjc) is a compiler for a strict “static” (procedural) subset of Java (a compiler for structured programs in Java without objects). This project is used to illustrate various concepts in designing and implementing a translator.</p>
+<p>Features/Limitations of Static Java</p>
+<ul>
+<li>Only two variable types: boolean and int</li>
+<li>No objects (thus, no exception handling), arrays, or threads</li>
+<li>Only static fields and methods</li>
+<li>Method return type can be the above type and void</li>
+<li>No method overloading</li>
+<li>Can call Java library static methods (e.g., Integer.parseInt())</li>
+<li>Consists only one class that has a Java main method (String array is allowed here)</li>
+<li>No increment and decrement expressions</li>
+<li>No package declaration (i.e., the declared class lives in the default package)</li>
+<li>All code must be in one file, etc.</li>
+</ul>
+<h4 id="concrete-syntax-of-static-java">Concrete Syntax of Static Java</h4>
+<pre tabindex="0"><code>&lt;program&gt;                     ::= &lt;class-declaration&gt;
+&lt;class-declaration&gt;           ::= &#34;public&#34; &#34;class&#34; ID &#34;{&#34; &lt;main-method-declaration&gt; &lt;field-or-method-declaration&gt;* &#34;}&#34;
+&lt;main-method-declaration&gt;     ::= &#34;public&#34; &#34;static&#34; &#34;void&#34; &#34;main&#34; &#34;(&#34; &#34;String&#34; &#34;[&#34; &#34;]&#34; ID &#34;)&#34; &#34;{&#34; &lt;method-body&gt; &#34;}&#34;
+&lt;field-or-method-declaration&gt; ::= &lt;field-declaration&gt; | &lt;method-declaration&gt;
+&lt;field-declaration&gt;           ::= &#34;static&#34; &lt;type&gt; ID &#34;;&#34;
+&lt;method-declaration&gt;          ::= &#34;static&#34; &lt;return-type&gt; ID &#34;(&#34; &lt;params&gt;? &#34;)&#34; &#34;{&#34; &lt;method-body&gt; &#34;}&#34;
+&lt;type&gt;                        ::= &#34;boolean&#34; | &#34;int&#34;
+&lt;return-type&gt;                 ::= &lt;type&gt; | &#34;void&#34;
+&lt;params&gt;                      ::= &lt;param&gt; ( &#34;,&#34; &lt;param&gt; )*
+&lt;param&gt;                       ::= &lt;type&gt; ID
+&lt;method-body&gt;                 ::= &lt;local-declaration&gt;* &lt;statement&gt;*
+&lt;local-declaration&gt;           ::= &lt;type&gt; ID &#34;;&#34;
+&lt;statement&gt;                   ::= &lt;assign-statement&gt;
+                                | &lt;if-statement&gt;
+                                | &lt;while-statement&gt;
+                                | &lt;invoke-exp-statement&gt;
+                                | &lt;return-statement&gt;
+&lt;assign-statement&gt;            ::= ID &#34;=&#34; &lt;exp&gt; &#34;;&#34;
+&lt;if-statement&gt;                ::= &#34;if&#34; &#34;(&#34; &lt;exp&gt; &#34;)&#34; &#34;{&#34; &lt;statement&gt;* &#34;}&#34; ( &#34;else&#34; &#34;{&#34; &lt;statement&gt;* &#34;}&#34; )?
+&lt;while-statement&gt;             ::= &#34;while&#34; &#34;(&#34; &lt;exp&gt; &#34;)&#34; &#34;{&#34; &lt;statement&gt;* &#34;}&#34;
+&lt;invoke-exp-statement&gt;        ::= &lt;invoke-exp&gt; &#34;;&#34;
+&lt;return-statement&gt;            ::= &#34;return&#34; &lt;exp&gt;? &#34;;&#34;
+&lt;exp&gt;                         ::= &lt;literal-exp&gt;
+                                | &lt;unary-exp&gt;
+                                | &lt;paren-exp&gt;
+                                | &lt;binary-exp&gt;
+                                | &lt;invoke-exp&gt;
+                                | &lt;var-ref&gt;
+&lt;literal-exp&gt;                 ::= &lt;boolean-literal&gt; | INT
+&lt;boolean-literal&gt;             ::= &#34;true&#34; | &#34;false&#34;
+&lt;unary-exp&gt;                   ::= &lt;unary-op&gt; &lt;exp&gt;
+&lt;unary-op&gt;                    ::= &#34;+&#34; | &#34;-&#34; | &#34;!&#34;
+&lt;binary-exp&gt;                  ::= &lt;exp&gt; &lt;binary-op&gt; &lt;exp&gt;
+&lt;binary-op&gt;                   ::= &#34;+&#34; | &#34;-&#34; | &#34;*&#34; | &#34;/&#34; | &#34;%&#34; | &#34;&gt;&#34; | &#34;&gt;=&#34; | &#34;==&#34; | &#34;&lt;&#34; | &#34;⇐&#34; | &#34;!=&#34; | &#34;&amp;&amp;&#34; | &#34;||&#34;
+&lt;paren-exp&gt;                   ::= &#34;(&#34; &lt;exp&gt; &#34;)&#34;
+&lt;invoke-exp&gt;                  ::= ( ID &#34;.&#34; )? ID &#34;(&#34; &lt;args&gt;? &#34;)&#34;
+&lt;args&gt;                        ::= &lt;exp&gt; ( &#34;,&#34; &lt;exp&gt; )*
+&lt;var-ref&gt;                     ::= ID
+
+ID                              = ( ‘a’..’z’ | ‘A’..’Z’ | ‘_’ | ‘$’ ) ( ‘a’..’z’ | ‘A’..’Z’ | ‘_’ | ‘0’..’9’ | ‘$’ )*
+INT                             = ‘0’ | (’1’..’9’) (’0’..’9’)*
+</code></pre><h4 id="static-java-as-implemented-in-eclipse-jdt-asm-and-jvm-bytecode">Static Java as implemented in Eclipse JDT, ASM, and JVM Bytecode</h4>
+
+
+
+
+<table>
+    
+    
+    
+    
+    <tr>
+         <th>StaticJava</th>  <th>Eclipse JDT (org.eclipse.jdt.core.dom.*)</th>  <th>ASM (org.objectweb.asm.tree.*)</th>  <th>JVM Bytecode</th> 
+    </tr>
+    
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;program&gt;</code></p></td>
+        
+        
+        
+        <td><p>CompilationUnit</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;class-declaration&gt;</code></p></td>
+        
+        
+        
+        <td><p>TypeDeclaration</p></td>
+        
+        
+        
+        <td><p>ClassNode</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;main-method-declaration&gt;</code></p></td>
+        
+        
+        
+        <td><p>MethodDeclaration</p></td>
+        
+        
+        
+        <td><p>MethodNode</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;field-declaration&gt;</code></p></td>
+        
+        
+        
+        <td><p>FieldDeclaration</p></td>
+        
+        
+        
+        <td><p>FieldNode</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;method-declaration&gt;</code></p></td>
+        
+        
+        
+        <td><p>MethodDeclaration</p></td>
+        
+        
+        
+        <td><p>MethodNode</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;type&gt;</code></p></td>
+        
+        
+        
+        <td><p>Type (PrimitiveType)</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;return-type&gt;</code></p></td>
+        
+        
+        
+        <td><p>PrimitiveType</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;param&gt;</code></p></td>
+        
+        
+        
+        <td><p>SingleVariableDeclaration</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;method-body&gt;</code></p></td>
+        
+        
+        
+        <td><p>Block</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;local-declaration&gt;</code></p></td>
+        
+        
+        
+        <td><p>VariableDeclarationStatement</p></td>
+        
+        
+        
+        <td><p>LocalVariableNode</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;assign-statement&gt;</code></p></td>
+        
+        
+        
+        <td><p>ExpressionStatement (Assignment)</p></td>
+        
+        
+        
+        <td><p>VarInsnNode</p></td>
+        
+        
+        
+        <td><p>ISTORE, PUTSTATIC</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;if-statement&gt;</code></p></td>
+        
+        
+        
+        <td><p>IfStatement</p></td>
+        
+        
+        
+        <td><p>JumpInsnNode</p></td>
+        
+        
+        
+        <td><p>IF_xxx, GOTO</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;while-statement&gt;</code></p></td>
+        
+        
+        
+        <td><p>WhileStatement</p></td>
+        
+        
+        
+        <td><p>JumpInsnNode</p></td>
+        
+        
+        
+        <td><p>IF_xxx, GOTO</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;invoke-exp-statement&gt;</code></p></td>
+        
+        
+        
+        <td><p>ExpressionStatement (MethodInvocation)</p></td>
+        
+        
+        
+        <td><p>MethodInsnNode</p></td>
+        
+        
+        
+        <td><p>INVOKESTATIC</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;return-statement&gt;</code></p></td>
+        
+        
+        
+        <td><p>ReturnStatement</p></td>
+        
+        
+        
+        <td><p>InsnNode</p></td>
+        
+        
+        
+        <td><p>RETURN, IRETURN</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;literal-exp&gt;</code></p></td>
+        
+        
+        
+        <td><p>BooleanLiteral, NumberLiteral</p></td>
+        
+        
+        
+        <td><p>InsnNode</p></td>
+        
+        
+        
+        <td><p>ICONST_M1, ICONST_0, ICONST_1, ICONST_2, ICONST_3, ICONST_4, ICONST_5, BIPUSH, SIPUSH, LDC</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;unary-exp&gt;</code></p></td>
+        
+        
+        
+        <td><p>PrefixExpression</p></td>
+        
+        
+        
+        <td><p>IntInsnNode, JumpInsnNode</p></td>
+        
+        
+        
+        <td><p>INEG, IF_EQ;</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;binary-exp&gt;</code></p></td>
+        
+        
+        
+        <td><p>InfixExpression</p></td>
+        
+        
+        
+        <td><p>InsnNode, JumpInsnNode</p></td>
+        
+        
+        
+        <td><p>IADD, ISUB, IMUL, IDIV, IREM, INEG, IF_xxx, GOTO</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;paren-exp&gt;</code></p></td>
+        
+        
+        
+        <td><p>ParenthesizedExpression</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+        
+        <td><p>N/A</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;invoke-exp&gt;</code></p></td>
+        
+        
+        
+        <td><p>MethodInvocation</p></td>
+        
+        
+        
+        <td><p>MethodInsnNode</p></td>
+        
+        
+        
+        <td><p>INVOKESTATIC</p></td>
+        
+        
+    </tr>
+    
+    <tr>
+        
+        
+        <td><p><code>&lt;var-ref&gt;</code></p></td>
+        
+        
+        
+        <td><p>SimpleName</p></td>
+        
+        
+        
+        <td><p>VarInsnNode, FieldInsnNode</p></td>
+        
+        
+        
+        <td><p>ILOAD, GETSTATIC</p></td>
+        
+        
+    </tr>
+    
+</table>
+<p>Miscellaneous: POP, POP2, DUP, DUP_X1, DUP_X2, DUP2, DUP2_X1, DUP2_X2, SWAP</p>
+<h4 id="project--extended-static-java-compiler-esjc">Project – Extended Static Java Compiler (esjc)</h4>
+<p>Extended Static Java Compiler (esjc) is a compiler for a strict “static” subset of Java that extends the Static Java compiler by including, for example, heap objects/arrays. This project serves as an individual mini-project for students to demonstrate their understandings of the essential concepts in designing and implementing a translator.</p>
+<h5 id="featureslimitations-of-extended-static-java">Features/Limitations of Extended Static Java</h5>
+<ul>
+<li>Allows user-defined class and (one-dimensional) array types</li>
+<li>No threads</li>
+<li>Only static fields and methods for the main (public) class, and public (non-static) fields for the rest.</li>
+<li>Method return type can be the above type and void</li>
+<li>No method overloading</li>
+<li>Can call Java library static methods (e.g., Integer.parseInt())</li>
+<li>Consists only one public class that has a Java main method, and non-public classes</li>
+<li>No increment and decrement expressions</li>
+<li>No package declaration (i.e., the declared class lives in the default package)</li>
+<li>All code must be in one file, etc.</li>
+</ul>
+<h5 id="concrete-syntax-of-extended-static-java">Concrete Syntax of Extended Static Java</h5>
+<p>Note: non-terminals with ! are new or modified (wrt. StaticJava concrete syntax)</p>
+<pre tabindex="0"><code>&lt;program ! &gt;                  ::= &lt;simple-class-declaration&gt;* &lt;class-declaration&gt; &lt;simple-class-declaration&gt;*
+&lt;simple-class-declaration ! &gt; ::= &#34;class&#34; ID &#34;{&#34; &lt;public-field-declaration&gt;* &#34;}&#34;
+&lt;public-field-declaration ! &gt; ::= &#34;public&#34; &lt;type&gt; ID &#34;;&#34;
+&lt;class-declaration&gt;           ::= &#34;public&#34; &#34;class&#34; ID &#34;{&#34; &lt;main-method-declaration&gt; &lt;field-or-method-declaration&gt;* &#34;}&#34;
+&lt;main-method-declaration&gt;     ::= &#34;public&#34; &#34;static&#34; &#34;void&#34; &#34;main&#34; &#34;(&#34; &#34;String&#34; &#34;[&#34; &#34;]&#34; ID &#34;)&#34; &#34;{&#34; &lt;method-body&gt; &#34;}&#34;
+&lt;field-or-method-declaration&gt; ::= &lt;field-declaration&gt; | &lt;method-declaration&gt;
+&lt;field-declaration&gt;           ::= &#34;static&#34; &lt;type&gt; ID &#34;;&#34;
+&lt;method-declaration&gt;          ::= &#34;static&#34; &lt;return-type&gt; ID &#34;(&#34; &lt;params&gt;? &#34;)&#34; &#34;{&#34; &lt;method-body&gt; &#34;}&#34;
+&lt;type ! &gt;                     ::= ( &lt;basic-type&gt; | ID ) ( &#34;[&#34; &#34;]&#34; )?
+&lt;basic-type&gt;                  ::= &#34;boolean&#34; | &#34;int&#34;
+&lt;return-type&gt;                 ::= &lt;type&gt; | &#34;void&#34;
+&lt;params&gt;                      ::= &lt;param&gt; ( &#34;,&#34; &lt;param&gt; )*
+&lt;param&gt;                       ::= &lt;type&gt; ID
+&lt;method-body&gt;                 ::= &lt;local-declaration&gt;* &lt;statement&gt;*
+&lt;local-declaration&gt;           ::= &lt;type&gt; ID &#34;;&#34;
+&lt;statement ! &gt;                ::= &lt;assign-statement&gt;
+                                | &lt;if-statement&gt;
+                                | &lt;while-statement&gt;
+                                | &lt;invoke-exp-statement&gt;
+                                | &lt;return-statement&gt;
+                                | &lt;for-statement&gt;
+                                | &lt;do-while-statement&gt;
+                                | &lt;inc-dec-statement&gt;
+&lt;assign-statement&gt;            ::= &lt;assign&gt; &#34;;&#34;
+&lt;assign&gt;                      ::= &lt;lhs&gt; &#34;=&#34; &lt;exp&gt;
+&lt;lhs ! &gt;                      ::= ID | &lt;exp&gt; &#34;.&#34; ID | &lt;exp&gt; &#34;[&#34; &lt;exp&gt; &#34;]&#34;
+&lt;if-statement&gt;                ::= &#34;if&#34; &#34;(&#34; &lt;exp&gt; &#34;)&#34; &#34;{&#34; &lt;statement&gt;* &#34;}&#34; ( &#34;else&#34; &#34;{&#34; &lt;statement&gt;* &#34;}&#34; )?
+&lt;while-statement&gt;             ::= &#34;while&#34; &#34;(&#34; &lt;exp&gt; &#34;)&#34; &#34;{&#34; &lt;statement&gt;* &#34;}&#34;
+&lt;invoke-exp-statement&gt;        ::= &lt;invoke-exp&gt; &#34;;&#34;
+&lt;return-statement&gt;            ::= &#34;return&#34; &lt;exp&gt;? &#34;;&#34;
+&lt;for-statement ! &gt;            ::= &#34;for&#34; &#34;(&#34; &lt;for-inits&gt;? &#34;;&#34; &lt;exp&gt;? &#34;;&#34; &lt;for-updates&gt;? &#34;)&#34; &#34;{&#34; &lt;statement&gt;* &#34;}&#34;
+&lt;for-inits ! &gt;                ::= &lt;assign&gt; ( &#34;,&#34; &lt;assign&gt; )*
+&lt;for-updates ! &gt;              ::= &lt;inc-dec&gt; ( &#34;,&#34; &lt;inc-dec&gt; )*
+&lt;inc-dec ! &gt;                  ::= &lt;lhs&gt; &#34;++&#34; | &lt;lhs&gt; &#34;––&#34;
+&lt;do-while-statement ! &gt;       ::= &#34;do&#34; &#34;{&#34; &lt;statement&gt;* &#34;}&#34; &#34;while&#34; &#34;(&#34; &lt;exp&gt; &#34;)&#34; &#34;;&#34;
+&lt;inc-dec-statement ! &gt;        ::= &lt;inc-dec&gt; &#34;;&#34;
+&lt;exp ! &gt;                      ::= &lt;literal-exp&gt;
+                                | &lt;unary-exp&gt;
+                                | &lt;binary-exp&gt;
+                                | &lt;paren-exp&gt;
+                                | &lt;invoke-exp&gt;
+                                | &lt;var-ref&gt;
+                                | &lt;new-exp&gt;
+                                | &lt;array-access-exp&gt;
+                                | &lt;field-access-exp&gt;
+                                | &lt;cond-exp&gt;
+&lt;literal-exp ! &gt;              ::= &lt;boolean-literal&gt; | INT | &#34;null&#34;
+&lt;boolean-literal&gt;             ::= &#34;true&#34; | &#34;false&#34;
+&lt;unary-exp&gt;                   ::= &lt;unary-op&gt; &lt;exp&gt;
+&lt;unary-op&gt;                    ::= &#34;+&#34; | &#34;-&#34; | &#34;!&#34; | &#34;~&#34;
+&lt;binary-exp&gt;                  ::= &lt;exp&gt; &lt;binary-op&gt; &lt;exp&gt;
+&lt;binary-op&gt;                   ::= &#34;+&#34; | &#34;-&#34; | &#34;*&#34; | &#34;/&#34; | &#34;%&#34; | &#34;&gt;&#34; | &#34;&gt;=&#34; | &#34;==&#34; | &#34;&lt;&#34; | &#34;&lt;=&#34; | &#34;!=&#34; | &#34;&amp;&amp;&#34; | &#34;||&#34; | &#34;&lt;&lt;&#34; | &#34;&gt;&gt;&#34; | &#34;&gt;&gt;&gt;&#34;
+&lt;paren-exp&gt;                   ::= &#34;(&#34; &lt;exp&gt; &#34;)&#34;
+&lt;invoke-exp&gt;                  ::= ( ID &#34;.&#34; )? ID &#34;(&#34; &lt;args&gt;? &#34;)&#34;
+&lt;args&gt;                        ::= &lt;exp&gt; ( &#34;,&#34; &lt;exp&gt; )*
+&lt;var-ref&gt;                     ::= ID
+&lt;cond-exp&gt;                    ::= &lt;exp&gt; &#34;?&#34; &lt;exp&gt; &#34;:&#34; &lt;exp&gt;
+&lt;new-exp&gt;                     ::= &#34;new&#34; ID &#34;(&#34; &#34;)&#34;
+                                | &#34;new&#34; ( &lt;basic-type&gt; | ID ) &#34;[&#34; &lt;exp&gt; &#34;]&#34;
+                                | &#34;new&#34; ( &lt;basic-type&gt; | ID ) &#34;[&#34; &#34;]&#34; &lt;array-init&gt;
+&lt;array-init&gt;                  ::= &#34;{&#34; &lt;exp&gt; ( &#34;,&#34; &lt;exp&gt; )* &#34;}&#34;
+&lt;field-access-exp&gt;            ::= &lt;exp&gt; &#34;.&#34; ID
+&lt;array-access-exp&gt;            ::= &lt;exp&gt; &#34;[&#34; &lt;exp&gt; &#34;]&#34;
+
+ID                              = ( ‘a’..’z’ | ‘A’..’Z’ | ‘_’ | ‘$’ ) ( ‘a’..’z’ | ‘A’..’Z’ | ‘_’ | ‘0’..’9’ | ‘$’ )*
+INT                             = ‘0’ | (’1’..’9’) (’0’..’9’)*
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        
+
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="https://f24.compilers.santoslab.org/bundle.min.d9847dec188cb3ba71e262769d7f64069d223c3a9713999a5da5f7aca5638686e15a900ac07cc755d19861961f24145ef2d608296933e4150cae87f4911a7dbb.js" integrity="sha512-2YR97BiMs7px4mJ2nX9kBp0iPDqXE5maXaX3rKVjhobhWpAKwHzHVdGYYZYfJBRe8tYIKWkz5BUMrof0kRp9uw=="></script>
+
+
+<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/thecarnie-cycle2/2.1.6c/jquery.cycle2.min.js" integrity="sha512-ydWfQuPu+srw5hhkU8O1XGn3/Kc+GyoDBvYc8E+SyuZKphQP18ZWYKywIFzPWZwQk6dlmTY69aDg/SnFz3qPeQ==" crossorigin="anonymous"></script>
+<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous"></script>
+<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.14/jstree.min.js" integrity="sha512-OQ2by9SrJBwcXaeYmkG2t6FVZiwpyRtFar2VvULjuq5OjVpJLwsUHuNzN9PClqEJAYsWsRPSb4TTfriZzPGiow==" crossorigin="anonymous"></script>
+<script style="text/javascript">
+  window.addEventListener('load', function () {
+    $('#page-tree').jstree({
+      "core": {
+        "themes": {
+          "name": document.documentElement.getAttribute("data-theme") == "dark" ? "default-dark" : "default",
+          "dots": true,
+          "icons": false,
+          "variant": "large"
+        }
+      },
+      plugins: [ "ui" ],
+    }).bind("select_node.jstree", function (e, data) {
+      document.location.href = data.node.a_attr.href;
+    }).bind("ready.jstree", function (event, data) {
+      $(this).jstree("open_all");
+    }).bind("open_all.jstree", function (event, data) {
+      level = 0;
+      data.instance.element.find('li').each(function() {
+        if (level > 0 && data.instance.get_path(this).length >= level){
+          data.instance.close_node(this);
+        }
+      });
+      data.instance.element.get()[0].style.display="block";
+    });
+  });
+</script>
+
+
+    </body>
+</html>
