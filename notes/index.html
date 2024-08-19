@@ -45,7 +45,7 @@ Get a K-State eID if you don’t already have one. Sign up online for a CIS acco
   <meta itemprop="name" content="Notes">
   <meta itemprop="description" content="CIS Account If you do not have a CIS account, here is how to get one:
 Get a K-State eID if you don’t already have one. Sign up online for a CIS account (which requires an active eID first!). The account manager will approve your account and you will receive a password by email to by your eID account. GitHub Account Coursework submissions will be done via GitHub. In the beginning of the course, each student will be given a private GitHub repository; thus, you need to have a GitHub account.">
-  <meta itemprop="wordCount" content="156">
+  <meta itemprop="wordCount" content="195">
   <meta itemprop="image" content="https://f24.softwarespecs.santoslab.org/">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -201,11 +201,21 @@ Get a K-State eID if you don’t already have one. Sign up online for a CIS acco
 <h4 id="course-software-infrastructure">Course Software Infrastructure</h4>
 <p>It is required that you use:</p>
 <ul>
-<li><a href="https://github.com/AlloyTools/org.alloytools.alloy/releases/tag/v5.1.0">Alloy 5.1.0</a>, which provides abstract
+<li><a href="https://github.com/AlloyTools/org.alloytools.alloy/releases">Alloy</a>, which provides abstract
 software modeling tooling</li>
 <li><a href="https://sireum.org">Sireum IVE</a>, which provides SysMLv2+HAMR and Logika tooling</li>
 </ul>
-<h4 id="examples-and-slides">Examples and Slides</h4>
+<h4 id="git-workflow">Git Workflow</h4>
+<p>To merge updates from <a href="https://github.com/ksu-cis-706/f24-706-project">https://github.com/ksu-cis-706/f24-706-project</a> (replace <eid> with your K-State e-id):</p>
+<pre tabindex="0"><code>git clone git@github.com:ksu-cis-771/f24-771-&lt;eid&gt;.git
+cd f24-771-&lt;eid&gt;
+git remote add upstream git@github.com:ksu-cis-771/f24-771-project.git
+git fetch upstream
+git merge upstream/master
+</code></pre><p>Resolve any git merge issues, then:</p>
+<pre tabindex="0"><code>git push
+sireum proyek ive .
+</code></pre><h4 id="examples-and-slides">Examples and Slides</h4>
 <p>Examples, slides, and some recorded lectures can be accessed in the course&rsquo;s K-State Canvas file section.</p>
 <p>Note that the slides might be updated during the course so do not print them until we have discussed the topics.</p>
 
